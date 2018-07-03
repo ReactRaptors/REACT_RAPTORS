@@ -1,0 +1,30 @@
+.login{
+    padding: 60px 0;
+}
+
+.login form{
+    max-width: 350px;
+    margin : 0px auto;
+}
+
+.login form div.email,
+.login form div.password{
+    display: inline-grid;
+}
+
+.email,.password{
+    margin: 10px;
+    padding : 8px;
+    text-align : left;
+}
+
+.loginButtons input{
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
