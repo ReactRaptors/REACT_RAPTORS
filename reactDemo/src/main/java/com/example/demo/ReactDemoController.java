@@ -45,22 +45,23 @@ public class ReactDemoController {
 	}
 	
 	@RequestMapping(value = "/reactathon/getJobDetailsForUser", method = RequestMethod.GET)
-	public String getJobDetailsForUser (String inpData) throws Exception{
+	public String getJobDetailsForUser (String emailId, String uniqueId) throws Exception{
 		System.out.println("Entering getJobDetailsForUser");
 		String finalResponse = null;
 		try {
 			
 			JSONParser jsonParser = new JSONParser();
-			JSONObject jsonObj = (JSONObject)jsonParser.parse(inpData);
-			JSONObject obj2 = jsonObj.get("data") != null ? (JSONObject) jsonObj.get("data"):null;
+			//JSONObject jsonObj = (JSONObject)jsonParser.parse(inpData);
+			//JSONObject obj2 = jsonObj.get("data") != null ? (JSONObject) jsonObj.get("data"):null;
 			
-			String emailId = obj2.get("emailId")!=null ? obj2.get("emailId").toString():"";
-			String uniqueId = obj2.get("uniqueId")!=null ? obj2.get("uniqueId").toString():"";
+			//String emailId = obj2.get("emailId")!=null ? obj2.get("emailId").toString():"";
+			//String uniqueId = obj2.get("uniqueId")!=null ? obj2.get("uniqueId").toString():"";
 			
-			System.out.println("inpData--> "+inpData);
+			//System.out.println("inpData--> "+inpData);
 			System.out.println("emailId--> "+emailId);
+			System.out.println("uniqueId--> "+uniqueId);
 			
-			int userId = serv.getUserDetails(inpData);
+			int userId = serv.getUserDetails(emailId);
 			System.out.println("userId--> "+userId);
 			
 			if(userId != 0)
