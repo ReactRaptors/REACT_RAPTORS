@@ -8,6 +8,8 @@ import './App.css';
 import Login from './Login/Login';
 import About from './About/About';
 import Contact from './Contact/Contact';
+import UserPage from './UserDetails/UserPage';
+
 
 class App extends Component {
   render() {
@@ -26,6 +28,7 @@ class App extends Component {
             <Route exact path="/" component={Login}/>
             <Route path="/about" component={About}/>
             <Route path="/contact" component={Contact}/>
+            <Route path="/UserPage" component={UserPage}/>
         </div>
       </div>
       </HashRouter>

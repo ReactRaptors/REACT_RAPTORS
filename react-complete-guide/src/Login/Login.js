@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import './Login.css';
 
+import axios from "axios";
+
 class Login extends Component{
     constructor(props){
         super(props);
         this.state = {
-            registerVal:false,
             emailVal : "",
             passwordVal : "",
             userDetails: [
@@ -19,27 +20,28 @@ class Login extends Component{
         this.registerHandler=this.registerHandler.bind(this);
         this.changeHandler=this.changeHandler.bind(this);
        }
-    
-    getUserDetails = () => {
+
+    /*getUserDetails = () => {
+      var email = this.state.emailVal;
+      var password = this.state.passwordVal;
         fetch("https://jsonplaceholder.typicode.com/users")
         .then((resp) => {
             console.log("inside resp>> ", resp);
           return resp.json()
-        }) 
+        })
         .then((data) => {
             console.log("inside data>> ", data);
-          //this.setState({ userDetails: data })     
-                         
+          //this.setState({ userDetails: data })
+
         })
         .catch((error) => {
           console.log(error, "catch the hoop")
-        })
-      }
+        })*/
 
 
     submitHandler(event){
-        this.getUserDetails();
-        this.props.history.push("/userDetails");
+        //this.getUserDetails();
+        this.props.history.push("/userPage");
     }
     registerHandler(event){
         this.setState({registerVal:true})
@@ -59,7 +61,7 @@ class Login extends Component{
                     <div className="email">
                         <label>Email: </label>
                         <input className="emailVal"
-                            autoFocus 
+                            autoFocus
                             type="text"
                             value={this.state.emailVal}
                             onChange={this.changeHandler}

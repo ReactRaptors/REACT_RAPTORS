@@ -8,7 +8,7 @@ import Login from '../Login/Login';
 import About from '../About/About';
 import Contact from '../Contact/Contact';
 import Register from '../Register/Register';
-//import UserDetails from '../UserDetails/UserDetails';
+import UserPage from '../UserDetails/UserPage';
 
 class Header extends Component{
     render(){
@@ -28,6 +28,7 @@ class Header extends Component{
                         <Route path="/about" component={About}/>
                         <Route path="/contact" component={Contact}/>
                         <Route path="/register" component={Register}/>
+                        <Route path="/UserPage" component={UserPage}/>
                     </div>
                 </div>
             </HashRouter>
