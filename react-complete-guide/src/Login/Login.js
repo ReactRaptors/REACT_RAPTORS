@@ -42,6 +42,9 @@ class Login extends Component{
     submitHandler(event){
         //this.getUserDetails();
         this.props.history.push("/userPage");
+        if(this.state.emailVal == null){
+          alert("Email ID is invalid");
+        }
     }
     registerHandler(event){
         this.setState({registerVal:true})

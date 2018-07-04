@@ -13,7 +13,7 @@ class UserPage extends Component{
 
   componentDidMount(){
     axios
-      .get("http://10.74.23.241:8086/reactathon/getJobDetailsForUser?emailId={this.state.emailVal}&uniqueId={this.state.passwordVal}")
+      .get("http://localhost:8086/reactathon/getJobDetailsForUser?emailId=amsa.singaravelu@verizon.com&uniqueId=123")
       .then(response => {
 
         // create an array of contacts only with relevant data
